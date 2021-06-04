@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Admins> 
+  <Admin> 
+    <userName>admin</userName>  
+    <userPassword>admin</userPassword> 
+  </Admin>  
+  <Admin> 
+    <userName>zhangsan</userName>  
+    <userPassword>zhangsan123</userPassword> 
+  </Admin>  
+  <Admin> 
+    <userName>dingzihang</userName>  
+    <userPassword>dzh20001220</userPassword> 
+  </Admin> 
+</Admins>
