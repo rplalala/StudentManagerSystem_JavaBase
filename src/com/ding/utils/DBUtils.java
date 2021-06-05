@@ -17,7 +17,7 @@ public class DBUtils {
         try {
             //实例化配置文件信息
             properties = new Properties();
-            properties.load(new FileReader("src/JDBC.properties"));
+            properties.load(new FileReader("entity/JDBC.properties"));
             //利用配置文件加载数据库
             Class.forName(properties.getProperty("mysqlDriver"));
         } catch (ClassNotFoundException | IOException e) {
