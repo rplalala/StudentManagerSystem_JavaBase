@@ -16,10 +16,10 @@ public class RandInfo {
     /**
      * 功能：随机产生姓氏
      *
-     * @return
+     * @return 姓氏
      */
     public String getFamilyName() {
-        String str = "";
+        String str;
         int randNum = new Random().nextInt(2) + 1;
         int strLen = randNum == 1 ? familyName1.length() : familyName2.length();
         int index = new Random().nextInt(strLen);
@@ -35,7 +35,7 @@ public class RandInfo {
     /**
      * 功能：随机产生性别
      *
-     * @return
+     * @return 性别
      */
     public String getSex() {
         int randNum = new Random().nextInt(2) + 1;
@@ -46,8 +46,8 @@ public class RandInfo {
      * 功能：传入性别参数，依据性别产生名字
      * 返回的数组 ，索引0是名字；索引1是性别
      *
-     * @param sex
-     * @return
+     * @param sex:性别
+     * @return 返回[名字，性别]
      */
     public String[] getNameAndSex(String sex) {
         String[] nameSex = new String[2];
@@ -64,48 +64,48 @@ public class RandInfo {
     /**
      * 功能：随机产生18-24的整数作为年龄
      *
-     * @return
+     * @return 18-24的整数
      */
     public int getAge() {
-        return (int)(Math.random()*7 + 18);
+        return (int) (Math.random() * 7 + 18);
     }
-    
+
     /**
      * 功能：随机产生班级(1、2、3、4班)
      *
-     * @return
+     * @return (1 、 2 、 3 、 4班)
      */
     public String getClasses() {
-    	int classId = (int)(Math.random()*4 + 1);
-    	
-		return classId + "班";
-        
+        int classId = (int) (Math.random() * 4 + 1);
+
+        return classId + "班";
+
     }
-    
+
     /**
-     * 功能：随机产生住址 3-8号楼 1-4层 
+     * 功能：随机产生住址 3-8号楼 1-4层
      * 例：401-409 411 - 419 421 - 429 431-439
      * 一房4人，一层30房，4层 则 一栋楼住480人
      * 一共6栋楼，共可以住2880人
      * 格式：8#401
      *
-     * @return
+     * @return x#xxx
      */
     public String getAddress() {
-    	String address;
-    	int buildingId = (int)(Math.random()*6 + 3);//3-8
-    	int floorId = (int)(Math.random()*4 + 1);//1-4
-    	int roomId = (int)(Math.random()*39 + 1);//1-39
-    	
-    	if(roomId < 10) {
-    		address = buildingId+"#"+floorId+"0"+roomId;
-    	}else if(roomId >= 11 && roomId <= 19 || roomId >= 21 && roomId <= 29 || roomId >= 31 && roomId <= 39){
-    		address = buildingId+"#"+floorId+(roomId+"");
-    	}else {
-    		//当roomId为10、20、30时，重新赋予一个不为10、20、30随机数
-    		address = getAddress();
-    	}
-    	return address;
+        String address;
+        int buildingId = (int) (Math.random() * 6 + 3);//3-8
+        int floorId = (int) (Math.random() * 4 + 1);//1-4
+        int roomId = (int) (Math.random() * 39 + 1);//1-39
+
+        if (roomId < 10) {
+            address = buildingId + "#" + floorId + "0" + roomId;
+        } else if (roomId >= 11 && roomId <= 19 || roomId >= 21 && roomId <= 29 || roomId >= 31 && roomId <= 39) {
+            address = buildingId + "#" + floorId + (roomId + "");
+        } else {
+            //当roomId为10、20、30时，重新赋予一个不为10、20、30随机数
+            address = getAddress();
+        }
+        return address;
     }
 
 }
