@@ -12,7 +12,7 @@ import com.ding.utils.XMLUtils;
 //实现管理员接口，实现功能
 public class AdminDaoImpl implements AdminDao {
 
-    XMLUtils xmlUtils = new XMLUtils("src/Admins.xml");
+    XMLUtils xmlUtils = new XMLUtils("entity/Admins.xml");
 
 
     /**
